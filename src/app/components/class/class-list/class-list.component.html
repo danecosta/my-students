@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <h1>Classes</h1>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="filter" />
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-success" (click)="filterClasses()">Filter</button>
+        </div>
+    </div>
+
+    <table class="table table-light table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Language</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cls of classes">
+                <td>{{cls.title}}</td>
+                <td>{{cls.language}}</td>
+                <td>{{cls.level}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

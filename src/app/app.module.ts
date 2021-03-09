@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { StudentModule } from './components/student/student.module';
+import { ClassModule } from './components/class/class.module';
+import { PaymentModule } from './components/payment/payment.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { StudentModule } from './components/student/student.module';
     BrowserModule,
     FormsModule,
     StudentModule,
+    ClassModule,
+    PaymentModule,
     AppRoutingModule
   ],
   providers: [],

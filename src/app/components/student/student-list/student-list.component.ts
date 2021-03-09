@@ -10,8 +10,8 @@ export class StudentListComponent implements OnInit {
 
   filter: string;
   students: Student[] = [
-    { name: 'Daniela', age: 28 },
-    { name: 'Iandra', age: 25 },
+    { id: '', name: 'Daniela', age: 28, email: '', language: 'EN', level: 'Advanced', firstClass: new Date(), notes: '', whatsapp: '' },
+    { id: '', name: 'Iandra', age: 25, email: '', language: 'FR', level: 'Advanced', firstClass: new Date(), notes: '', whatsapp: '' },
   ];
 
   constructor() { }
