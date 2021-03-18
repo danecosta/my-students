@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-class-new',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassNewComponent implements OnInit {
 
-  constructor() { }
+  classId = '';
+  title = 'New';
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.classId = this.activatedRoute.snapshot.paramMap.get('id');
+    if (this.classId)
+      this.title = "Update";
   }
 
 }

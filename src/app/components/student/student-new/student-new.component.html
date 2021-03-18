@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <h1>{{tittle}} Student</h1>
+        <h1>{{title}} Student</h1>
     </div>
     <form id="formStudent">
         <div class="row">
@@ -8,7 +8,7 @@
                 <label for="name">Name</label>
             </div>
             <div class="col-6">
-                <input id="name" type="text" class="form-control" [(ngModel)]="student.name">
+                <input id="name" name="name" type="text" class="form-control" [(ngModel)]="student.name">
             </div>
         </div>
         <div class="row">
@@ -16,7 +16,7 @@
                 <label for="email">E-mail</label>
             </div>
             <div class="col-6">
-                <input id="email" type="text" class="form-control" [(ngModel)]="student.email">
+                <input id="email" name="email" type="text" class="form-control" [(ngModel)]="student.email">
             </div>
         </div>
         <div class="row">
@@ -24,13 +24,14 @@
                 <label for="whatsapp">Whatsapp</label>
             </div>
             <div class="col-2">
-                <input id="whatsapp" type="text" class="form-control" [(ngModel)]="student.whatsapp">
+                <input id="whatsapp" name="whatsapp" type="text" class="form-control" [(ngModel)]="student.whatsapp">
             </div>
             <div class="col-2">
                 <label for="firstClass">First Class</label>
             </div>
             <div class="col-2">
-                <input id="firstClass" type="date" class="form-control" [(ngModel)]="student.firstClass">
+                <input id="firstClass" name="firstClass" type="date" class="form-control"
+                    [(ngModel)]="student.firstClass">
             </div>
         </div>
         <div class="row">
@@ -38,7 +39,7 @@
                 <label for="lang">Language</label>
             </div>
             <div class="col-2">
-                <select class="form-select" id="lang" [(ngModel)]="student.language">
+                <select class="form-select" name="language" id="lang" [(ngModel)]="student.language">
                     <option selected>Select</option>
                     <option value="1">English</option>
                     <option value="2">French</option>
@@ -48,7 +49,7 @@
                 <label for="level">Level</label>
             </div>
             <div class="col-2">
-                <select class="form-select" id="level" [(ngModel)]="student.level">
+                <select class="form-select" name="level" id="level" [(ngModel)]="student.level">
                     <option selected>Select</option>
                     <option value="1">Children</option>
                     <option value="2">Basic</option>
@@ -61,7 +62,7 @@
                 <label for="age">Age</label>
             </div>
             <div class="col-2">
-                <input id="age" type="text" class="form-control" [(ngModel)]="student.age">
+                <input id="age" name="age" type="text" class="form-control" [(ngModel)]="student.age">
             </div>
         </div>
         <div class="row">
@@ -69,7 +70,8 @@
                 <label for="notes">Notes</label>
             </div>
             <div class="col-6">
-                <textarea id="notes" type="text" class="form-control" rows="3" [(ngModel)]="student.notes"></textarea>
+                <textarea id="notes" name="notes" type="text" class="form-control" rows="3"
+                    [(ngModel)]="student.notes"></textarea>
             </div>
         </div>
         <div class="row">

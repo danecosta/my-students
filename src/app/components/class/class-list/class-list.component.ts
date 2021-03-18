@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Class } from '../models/class.model';
 
 @Component({
@@ -10,17 +11,24 @@ export class ClassListComponent implements OnInit {
 
   filter: string;
   classes: Class[] = [
-    { id: '', title: 'Family and Numbers', language: 'EN', level: 'Basic', conversation: '', grammar: '', vocabulary: '' },
-    { id: '', title: 'Irregular Verbs', language: 'EN', level: 'Advanced', conversation: '', grammar: '', vocabulary: '' }
+    { id: 'family', title: 'Family and Numbers', language: 'EN', level: 'Basic', conversation: '', grammar: '', vocabulary: '' },
+    { id: 'verbs', title: 'Irregular Verbs', language: 'EN', level: 'Advanced', conversation: '', grammar: '', vocabulary: '' }
   ];
+  classesBkp = Object.assign(this.classes);
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   filterClasses(): void {
-    this.classes = this.classes.filter(x => x.title === this.filter);
+    this.classes = this.classesBkp;
+    if (this.filter)
+      this.classes = this.classesBkp.filter(x => x.title === this.filter);
+  }
+
+  edit(id: string): void {
+    this.router.navigate(['/class/update', id]);
   }
 
 }

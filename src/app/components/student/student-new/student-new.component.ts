@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Student } from '../models/student.model';
 
 @Component({
@@ -8,12 +9,16 @@ import { Student } from '../models/student.model';
 })
 export class StudentNewComponent implements OnInit {
 
-  tittle = 'New';
+  title = 'New';
   student = new Student();
+  studentId = '';
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.studentId = this.activatedRoute.snapshot.paramMap.get('id');
+    if (this.studentId)
+      this.title = "Update";
   }
 
   saveStudent(): void { }

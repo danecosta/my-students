@@ -5,12 +5,15 @@
 
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" [(ngModel)]="filter" />
+            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Name"/>
         </div>
         <div class="col">
-            <button class="btn btn-outline-success" (click)="filterStudents()">Filter</button>
+            <button class="btn btn-outline-success" (click)="filterStudents()">Filter</button> &nbsp;
+            <button class="btn btn-outline-info" routerLink="/student/new">New</button>
         </div>
     </div>
+
+    <br>
 
     <table class="table table-light table-hover">
         <thead>
@@ -20,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let std of students">
+            <tr *ngFor="let std of students" (click)="edit(std.id)">
                 <td>{{std.name}}</td>
                 <td>{{std.age}}</td>
             </tr>
