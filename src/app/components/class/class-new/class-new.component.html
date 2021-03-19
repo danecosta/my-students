@@ -1,1 +1,72 @@
-<p>class-new works!</p>
+<div class="container">
+    <div class="row">
+        <h1>{{title}} Class</h1>
+    </div>
+    <form id="formClass">
+        <div class="row">
+            <div class="col-md-2">
+                <label for="title">Title</label>
+            </div>
+            <div class="col-md-10">
+                <input id="title" name="title" type="text" class="form-control" [(ngModel)]="class.title">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label for="lang">Language</label>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" name="language" id="lang" [(ngModel)]="class.language">
+                    <option selected>Select</option>
+                    <option value="EN">English</option>
+                    <option value="FR">French</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="level">Level</label>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" name="level" id="level" [(ngModel)]="class.level">
+                    <option selected>Select</option>
+                    <option value="C">Children</option>
+                    <option value="B">Basic</option>
+                    <option value="A">Advanced</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label for="grammar">Grammar</label>
+            </div>
+            <div class="col-md-10">
+                <textarea id="grammar" name="grammar" type="text" class="form-control" rows="3"
+                    [(ngModel)]="class.grammar"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="vocabulary">Vocabulary</label>
+            </div>
+            <div class="col-md-10">
+                <textarea id="vocabulary" name="vocabulary" type="text" class="form-control" rows="3"
+                    [(ngModel)]="class.vocabulary"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label for="conversation">Conversation</label>
+            </div>
+            <div class="col-md-10">
+                <textarea id="conversation" name="conversation" type="text" class="form-control" rows="3"
+                    [(ngModel)]="class.conversation"></textarea>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-light me-md-2" routerLink="/class/all">Back</button>
+            <button type="submit" class="btn btn-success" (click)="saveClass()">Save</button>
+        </div>
+    </form>
+</div>

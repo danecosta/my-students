@@ -7,7 +7,7 @@
             <div class="col-md-2">
                 <label for="name">Name</label>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <input id="name" name="name" type="text" class="form-control" [(ngModel)]="student.name">
             </div>
         </div>
@@ -15,7 +15,7 @@
             <div class="col-md-2">
                 <label for="email">E-mail</label>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <input id="email" name="email" type="text" class="form-control" [(ngModel)]="student.email">
             </div>
         </div>
@@ -23,22 +23,21 @@
             <div class="col-md-2">
                 <label for="whatsapp">Whatsapp</label>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <input id="whatsapp" name="whatsapp" type="text" class="form-control" [(ngModel)]="student.whatsapp">
             </div>
             <div class="col-md-2">
-                <label for="firstClass">First Class</label>
+                <label for="age">Age</label>
             </div>
-            <div class="col-md-2">
-                <input id="firstClass" name="firstClass" type="date" class="form-control"
-                    [(ngModel)]="student.firstClass">
+            <div class="col-md-4">
+                <input id="age" name="age" type="text" class="form-control" [(ngModel)]="student.age">
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
                 <label for="lang">Language</label>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <select class="form-select" name="language" id="lang" [(ngModel)]="student.language">
                     <option selected>Select</option>
                     <option value="EN">English</option>
@@ -48,7 +47,7 @@
             <div class="col-md-2">
                 <label for="level">Level</label>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <select class="form-select" name="level" id="level" [(ngModel)]="student.level">
                     <option selected>Select</option>
                     <option value="C">Children</option>
@@ -59,26 +58,16 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <label for="age">Age</label>
-            </div>
-            <div class="col-md-2">
-                <input id="age" name="age" type="text" class="form-control" [(ngModel)]="student.age">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
                 <label for="notes">Notes</label>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <textarea id="notes" name="notes" type="text" class="form-control" rows="3"
                     [(ngModel)]="student.notes"></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <button type="button" class="btn btn-light" routerLink="/student/all">Back</button>
-                <button type="submit" class="btn btn-success" (click)="saveStudent()">Save</button>
-            </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-light me-md-2" routerLink="/student/all">Back</button>
+            <button type="submit" class="btn btn-success" (click)="saveStudent()">Save</button>
         </div>
     </form>
 </div>

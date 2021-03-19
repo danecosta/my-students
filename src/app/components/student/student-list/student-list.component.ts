@@ -11,8 +11,8 @@ export class StudentListComponent implements OnInit {
 
   filter: string;
   students: Student[] = [
-    { id: '0bc5deb3-629e-4a6f-a62e-804eab638dd7', name: 'Daniela', age: 28, email: 'daniccosta92@gmail.com', language: 'EN', level: 'A', firstClass: new Date(), notes: 'Best student', whatsapp: '+5532991339194' },
-    { id: '950084dc-692a-4cef-a9f4-d27c67557865', name: 'Iandra', age: 25, email: '', language: 'FR', level: 'A', firstClass: new Date(), notes: '', whatsapp: '' },
+    { id: '0bc5deb3-629e-4a6f-a62e-804eab638dd7', name: 'Daniela', age: 28, email: 'daniccosta92@gmail.com', language: 'EN', level: 'A', firstClass: new Date(), notes: 'Best student', whatsapp: '+55 (32) 99133-9194' },
+    { id: '950084dc-692a-4cef-a9f4-d27c67557865', name: 'Iandra', age: 25, email: 'iandralumarques@gmail.com', language: 'FR', level: 'A', firstClass: new Date(), notes: '', whatsapp: '+55 (32) 99132-3934' },
   ];
   studentsBkp = Object.assign(this.students);
 

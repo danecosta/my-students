@@ -5,10 +5,10 @@
 
     <div class="row">
         <div class="col-md-6">
-            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Name"/>
+            <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Name" />
         </div>
         <div class="col-md-6">
-            <button class="btn btn-outline-success" (click)="filterStudents()">Filter</button> &nbsp;
+            <button class="btn btn-outline-success me-md-2" (click)="filterStudents()">Filter</button>
             <button class="btn btn-outline-info" routerLink="/student/new">New</button>
         </div>
     </div>
@@ -19,13 +19,15 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Age</th>
+                <th>Email</th>
+                <th>Whatsapp</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let std of students" (click)="edit(std.id)">
                 <td>{{std.name}}</td>
-                <td>{{std.age}}</td>
+                <td>{{std.email}}</td>
+                <td>{{std.whatsapp}}</td>
             </tr>
         </tbody>
     </table>
