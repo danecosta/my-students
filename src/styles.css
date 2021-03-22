@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --bs-font-sans-serif: "Comfortaa";
+}
+
 .bg-1 {
     background-color: #6dc3c6;
+}
+
+h1 {
+    padding-top: 1em;
 }
 
 .row {
