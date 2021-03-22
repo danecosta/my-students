@@ -11,6 +11,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { StudentModule } from './components/student/student.module';
 import { ClassModule } from './components/class/class.module';
 import { PaymentModule } from './components/payment/payment.module';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { PaymentModule } from './components/payment/payment.module';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { PaymentModule } from './components/payment/payment.module';
     StudentModule,
     ClassModule,
     PaymentModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent]
