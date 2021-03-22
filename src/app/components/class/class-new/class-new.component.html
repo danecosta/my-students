@@ -38,29 +38,25 @@
 
         <div class="row">
             <div class="col-md-2">
-                <label for="grammar">Grammar</label>
+                <label for="planOfLesson">Plan of lesson</label>
             </div>
             <div class="col-md-10">
-                <textarea id="grammar" name="grammar" type="text" class="form-control" rows="3"
-                    [(ngModel)]="class.grammar"></textarea>
+                <textarea id="planOfLesson" name="planOfLesson" type="text" class="form-control" rows="3"
+                    [(ngModel)]="class.planOfLesson"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <label for="vocabulary">Vocabulary</label>
+                <label for="contentOfLesson">Content</label>
             </div>
             <div class="col-md-10">
-                <textarea id="vocabulary" name="vocabulary" type="text" class="form-control" rows="3"
-                    [(ngModel)]="class.vocabulary"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <label for="conversation">Conversation</label>
-            </div>
-            <div class="col-md-10">
-                <textarea id="conversation" name="conversation" type="text" class="form-control" rows="3"
-                    [(ngModel)]="class.conversation"></textarea>
+                <!-- <textarea id="contentOfLesson" name="contentOfLesson" type="text" class="form-control" rows="3"
+                    [(ngModel)]="class.contentOfLesson"></textarea> -->
+                <div class="NgxEditor__Wrapper">
+                    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                    <ngx-editor [editor]="editor" [(ngModel)]="class.contentOfLesson">
+                    </ngx-editor>
+                </div>
             </div>
         </div>
 

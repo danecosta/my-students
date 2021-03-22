@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ClassRoutingModule } from './class.routing.module';
 import { ClassNewComponent } from './class-new/class-new.component';
 import { ClassListComponent } from './class-list/class-list.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ClassListComponent } from './class-list/class-list.component';
     imports: [
         BrowserModule,
         FormsModule,
-        ClassRoutingModule
+        ClassRoutingModule,
+        NgxEditorModule
     ],
     providers: [],
     bootstrap: []
