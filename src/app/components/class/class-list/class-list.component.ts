@@ -11,8 +11,8 @@ export class ClassListComponent implements OnInit {
 
   filter: string;
   classes: Class[] = [
-    { id: 'ca154c82-e7bb-4d91-a43b-a2ea65d5ae17', title: 'Family and Numbers', language: 'EN', level: 'Basic', contentOfLesson: '', planOfLesson: '' },
-    { id: '9f9ac777-98a4-4b78-92ad-82d34a5ac06c', title: 'Irregular Verbs', language: 'EN', level: 'Advanced', contentOfLesson: '', planOfLesson: '' }
+    { id: 'ca154c82-e7bb-4d91-a43b-a2ea65d5ae17', title: 'Family and Numbers', language: 'EN', level: 'Basic', contentOfLesson: '' },
+    { id: '9f9ac777-98a4-4b78-92ad-82d34a5ac06c', title: 'Irregular Verbs', language: 'EN', level: 'Advanced', contentOfLesson: '' }
   ];
   classesBkp = Object.assign(this.classes);
 

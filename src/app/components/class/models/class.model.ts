@@ -4,6 +4,5 @@ export class Class {
     language: string;
     level: string;
 
-    planOfLesson: string;
     contentOfLesson: string;
 }

@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-.bg-1{
-    background-color: #6DC3C6;
+.bg-1 {
+    background-color: #6dc3c6;
+}
+
+.row {
+    padding-bottom: 1em;
 }
