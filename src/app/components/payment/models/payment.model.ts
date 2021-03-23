@@ -1,6 +1,7 @@
 export class Payment {
     studentId: string;
-    value: number;
+    student: string;
+    value: string;
     classDate: Date;
-    paymentDate: Date;
+    paymentDate?: Date;
 }

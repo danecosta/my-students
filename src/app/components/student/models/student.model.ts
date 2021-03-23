@@ -7,5 +7,6 @@ export class Student {
     language: string;
     level: string;
     firstClass: Date;
+    value: string;
     notes: string;
 }

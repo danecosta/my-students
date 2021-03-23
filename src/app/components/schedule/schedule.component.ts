@@ -22,6 +22,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView,
 } from 'angular-calendar';
+import startOfHour from 'date-fns/startOfHour';
 
 const colors: any = {
   red: {
@@ -80,16 +81,23 @@ export class ScheduleComponent implements OnInit {
 
   events: CalendarEvent[] = [
     {
-      start: startOfDay(new Date()),
+      start: new Date(`2021-03-22T16:00:00-03:00`),
       title: 'Daniela Class',
-      color: colors.yellow,
+      color: colors.blue,
+      actions: this.actions,
+      draggable: true
+    },
+    {
+      start: new Date(`2021-03-22T19:30:00-03:00`),
+      title: 'Daniela Class',
+      color: colors.blue,
       actions: this.actions,
       draggable: true,
     },
     {
-      start: addDays(startOfDay(new Date()), 2),
+      start: new Date(`2021-03-24T16:00:00-03:00`),
       title: 'Ana Class',
-      color: colors.yellow,
+      color: colors.red,
       actions: this.actions,
       draggable: true,
     },
