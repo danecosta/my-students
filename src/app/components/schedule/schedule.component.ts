@@ -1,42 +1,18 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef,
-  OnInit,
-} from '@angular/core';
-import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours,
-} from 'date-fns';
+import { Component, ViewChild, TemplateRef, OnInit, } from '@angular/core';
+import { startOfDay, endOfDay, isSameDay, isSameMonth, } from 'date-fns';
 import { Subject } from 'rxjs';
-import {
-  CalendarEvent,
-  CalendarEventAction,
-  CalendarEventTimesChangedEvent,
-  CalendarView,
-} from 'angular-calendar';
-import startOfHour from 'date-fns/startOfHour';
+import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView, } from 'angular-calendar';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 const colors: any = {
   red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3',
-  },
-  blue: {
-    primary: '#1e90ff',
+    primary: '#810000',
     secondary: '#D1E8FF',
   },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA',
-  },
+  green: {
+    primary: '#387c6d',
+    secondary: '#D1E8FF',
+  }
 };
 
 @Component({
@@ -83,14 +59,14 @@ export class ScheduleComponent implements OnInit {
     {
       start: new Date(`2021-03-22T16:00:00-03:00`),
       title: 'Daniela Class',
-      color: colors.blue,
+      color: colors.red,
       actions: this.actions,
       draggable: true
     },
     {
       start: new Date(`2021-03-22T19:30:00-03:00`),
       title: 'Daniela Class',
-      color: colors.blue,
+      color: colors.red,
       actions: this.actions,
       draggable: true,
     },
@@ -105,7 +81,7 @@ export class ScheduleComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor() { }
+  constructor(private modal: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -144,7 +120,7 @@ export class ScheduleComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-    // this.modal.open(this.modalContent, { size: 'lg' });
+    this.modal.open(this.modalContent, { size: 'lg' });
   }
 
   addEvent(): void {
@@ -164,7 +140,11 @@ export class ScheduleComponent implements OnInit {
     ];
   }
 
-  deleteEvent(eventToDelete: CalendarEvent) {
+  doneEvent(eventToDone: CalendarEvent) {
+    this.events.filter((event) => event == eventToDone)[0].color = colors.green;
+  }
+
+  removeEvent(eventToDelete: CalendarEvent) {
     this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
